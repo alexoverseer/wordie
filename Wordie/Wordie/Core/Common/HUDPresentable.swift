@@ -22,8 +22,8 @@ extension UIViewController: HUDPresentable {
     }
 
     private func addSpinnerController() {
-        if children.first(where: { $0 is SpinnerViewController }) != nil { return }
-        let child = SpinnerViewController()
+        if children.first(where: { $0 is LoadingViewController }) != nil { return }
+        let child = LoadingViewController()
         addChild(child)
         child.view.frame = view.frame
         view.addSubview(child.view)
@@ -31,7 +31,7 @@ extension UIViewController: HUDPresentable {
     }
 
     private func hideSpinnerController() {
-        guard let child = children.first(where: { $0 is SpinnerViewController }) else { return }
+        guard let child = children.first(where: { $0 is LoadingViewController }) else { return }
         child.willMove(toParent: nil)
         child.view.removeFromSuperview()
         child.removeFromParent()
