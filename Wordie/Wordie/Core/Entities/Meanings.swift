@@ -11,13 +11,13 @@ import Foundation
 
 struct Meanings: Codable {
     let id: String
-    let wordID, difficultyLevel: Int
-    let partOfSpeechCode, meaningPrefix, text, soundURL: String
+    let wordID, difficultyLevel: Int?
+    let partOfSpeechCode, meaningPrefix, text, soundURL: String?
     let transcription: String
-    let updatedAt, mnemonics: String
+    let updatedAt, mnemonics: String?
     let translation: Translation
     let images: [Image]
-    let definition: Definition
+    let definition: Definition?
     let examples: [Definition]
     let meaningsWithSimilarTranslation: [MeaningsWithSimilarTranslation]
     let alternativeTranslations: [AlternativeTranslation]

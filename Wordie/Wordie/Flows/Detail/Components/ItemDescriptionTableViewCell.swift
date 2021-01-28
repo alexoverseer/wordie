@@ -1,5 +1,5 @@
 //
-//  WordTableViewCell.swift
+//  ItemDescriptionTableViewCell.swift
 //  Wordie
 //
 //  Created by Ilia Gutu on 1/28/21.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class WordTableViewCell: UITableViewCell, Identifiable, PopulatableCell {
+final class ItemDescriptionTableViewCell: UITableViewCell, Identifiable, PopulatableCell {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: .subtitle, reuseIdentifier: reuseIdentifier)
@@ -19,7 +19,6 @@ final class WordTableViewCell: UITableViewCell, Identifiable, PopulatableCell {
     }
 
     private func setupUI() {
-        textLabel?.numberOfLines = 0
         detailTextLabel?.numberOfLines = 0
     }
 

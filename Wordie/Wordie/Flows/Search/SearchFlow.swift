@@ -7,20 +7,24 @@
 
 import UIKit
 
-protocol SearchFlowInteractorInput {
+protocol SearchFlowInteractorType {
     func lookupItems(by query: String?)
+    func cellModel(at indexPath: IndexPath) -> CellModel?
+    var itemsCount: Int { get }
+    func didSelectItem(at indexPath: IndexPath)
 }
 
 protocol SearchFlowInteractorOutput: class, HUDPresentable {
-    func didFinishLoading(items: [WordItemViewModel])
+    func didFinishLoadingItems()
     func didFail(with error: SkyError)
 }
 
 enum SearchScreenBuilder {
-    static func build(lookupService: LookupServiceType = AppEnvironment.lookupService) -> SearchViewController {
+    static func build(coordinator: SearchFlowCoordinatorInput?, lookupService: LookupServiceType = AppEnvironment.lookupService) -> SearchViewController {
         let viewController = SearchViewController()
         let interactor = SearchFlowInteractor(lookupService: lookupService)
         viewController.interactor = interactor
+        interactor.coordinator = coordinator
         interactor.output = viewController
         return viewController
     }

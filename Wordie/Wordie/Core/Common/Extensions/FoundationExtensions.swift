@@ -12,3 +12,16 @@ extension String {
         return NSLocalizedString(self, comment: "")
     }
 }
+
+extension String {
+    func deletingPrefix(_ prefix: String) -> String {
+        guard self.hasPrefix(prefix) else { return self }
+        return String(self.dropFirst(prefix.count))
+    }
+
+    func asSchemedURL() -> URL? {
+        var components = URLComponents(string: deletingPrefix("//"))
+        components?.scheme = "http"
+        return components?.url
+    }
+}

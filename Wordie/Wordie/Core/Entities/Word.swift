@@ -12,6 +12,10 @@ struct Word: Codable {
     let id: Int
     let text: String
     let meanings: [Meaning]
+
+    var images: [String] {
+        meanings.compactMap { $0.imageURL }
+    }
 }
 
 // MARK: - Meaning
@@ -34,4 +38,11 @@ struct Meaning: Codable {
 struct Translation: Codable {
     let text: String
     let note: String?
+}
+
+extension Word {
+    var translations: String {
+        let translations = meanings.map { $0.translation.text }.joined(separator: ", ")
+        return translations
+    }
 }

@@ -9,3 +9,7 @@
 "search.empty.title" = "There is nothing there";
 "search.empty.subtitle" = "Please start typing or change your query.";
 "search.bar.placeholder" = "Search new words";
+"detail.empty.title" = "There is nothing there";
+"detail.empty.subtitle" = "Please choose another word from list";
+
+

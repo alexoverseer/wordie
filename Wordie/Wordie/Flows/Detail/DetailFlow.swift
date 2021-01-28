@@ -7,13 +7,16 @@
 
 import UIKit
 
-protocol DetailFlowInteractorInput {
+protocol DetailFlowInteractorType {
     func viewDidLoad()
     var title: String { get }
+    func cellModel(at indexPath: IndexPath) -> CellModel?
+    var itemsCount: Int { get }
+    func didSelectItem(at indexPath: IndexPath)
 }
 
 protocol DetailFlowInteractorOutput: class, HUDPresentable {
-    func didFinishLoading(items: [WordItemViewModel])
+    func didFinishLoadingItems()
     func didFail(with error: SkyError)
 }
 

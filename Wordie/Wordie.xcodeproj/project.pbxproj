@@ -54,6 +54,15 @@
 		65E926DB25C31BD6006E9282 /* MockURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E926DA25C31BD6006E9282 /* MockURL.swift */; };
 		65E926DF25C31F5D006E9282 /* MockLookupService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E926DE25C31F5D006E9282 /* MockLookupService.swift */; };
 		65E926E525C322DC006E9282 /* MockResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E926E425C322DC006E9282 /* MockResponse.swift */; };
+		65E926EC25C32798006E9282 /* CellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E926EB25C32798006E9282 /* CellModel.swift */; };
+		65E926F225C3289B006E9282 /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E926F125C3289B006E9282 /* Identifiable.swift */; };
+		65E926F625C3301C006E9282 /* ItemDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E926F525C3301C006E9282 /* ItemDescriptionTableViewCell.swift */; };
+		65E926FA25C3303F006E9282 /* ItemTopTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E926F925C3303F006E9282 /* ItemTopTableViewCell.swift */; };
+		65E926FE25C33057006E9282 /* WordCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E926FD25C33057006E9282 /* WordCellData.swift */; };
+		65E9270225C3471E006E9282 /* R.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E9270125C3471E006E9282 /* R.swift */; };
+		65E9270E25C35732006E9282 /* AudioDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E9270D25C35732006E9282 /* AudioDataTableViewCell.swift */; };
+		65E9271225C36590006E9282 /* AudioCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E9271125C36590006E9282 /* AudioCellData.swift */; };
+		65E9271625C365A7006E9282 /* TopCellData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65E9271525C365A7006E9282 /* TopCellData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,6 +127,15 @@
 		65E926DA25C31BD6006E9282 /* MockURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURL.swift; sourceTree = "<group>"; };
 		65E926DE25C31F5D006E9282 /* MockLookupService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLookupService.swift; sourceTree = "<group>"; };
 		65E926E425C322DC006E9282 /* MockResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockResponse.swift; sourceTree = "<group>"; };
+		65E926EB25C32798006E9282 /* CellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellModel.swift; sourceTree = "<group>"; };
+		65E926F125C3289B006E9282 /* Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
+		65E926F525C3301C006E9282 /* ItemDescriptionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDescriptionTableViewCell.swift; sourceTree = "<group>"; };
+		65E926F925C3303F006E9282 /* ItemTopTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTopTableViewCell.swift; sourceTree = "<group>"; };
+		65E926FD25C33057006E9282 /* WordCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCellData.swift; sourceTree = "<group>"; };
+		65E9270125C3471E006E9282 /* R.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R.swift; sourceTree = "<group>"; };
+		65E9270D25C35732006E9282 /* AudioDataTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioDataTableViewCell.swift; sourceTree = "<group>"; };
+		65E9271125C36590006E9282 /* AudioCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioCellData.swift; sourceTree = "<group>"; };
+		65E9271525C365A7006E9282 /* TopCellData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopCellData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +243,7 @@
 		65E924AA25BF473F006E9282 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				65E926EA25C32555006E9282 /* Components */,
 				65E924E425BF543E006E9282 /* DetailFlowInteractor.swift */,
 				65E925F025C1D19D006E9282 /* DetailFlow.swift */,
 				65E9268C25C2DA75006E9282 /* WordDetailViewController.swift */,
@@ -262,6 +281,9 @@
 				65E9266625C2C36E006E9282 /* Utils.swift */,
 				65E9266E25C2C501006E9282 /* SpinnerViewController.swift */,
 				65E9269625C2DD6E006E9282 /* Localizable.swift */,
+				65E926EB25C32798006E9282 /* CellModel.swift */,
+				65E926F125C3289B006E9282 /* Identifiable.swift */,
+				65E9270125C3471E006E9282 /* R.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -348,6 +370,7 @@
 			isa = PBXGroup;
 			children = (
 				65E9267425C2CAD2006E9282 /* WordTableViewCell.swift */,
+				65E926FD25C33057006E9282 /* WordCellData.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -369,6 +392,18 @@
 				65E926C425C31832006E9282 /* ImageFetcher.swift */,
 			);
 			path = Fetchers;
+			sourceTree = "<group>";
+		};
+		65E926EA25C32555006E9282 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				65E926F525C3301C006E9282 /* ItemDescriptionTableViewCell.swift */,
+				65E926F925C3303F006E9282 /* ItemTopTableViewCell.swift */,
+				65E9270D25C35732006E9282 /* AudioDataTableViewCell.swift */,
+				65E9271125C36590006E9282 /* AudioCellData.swift */,
+				65E9271525C365A7006E9282 /* TopCellData.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -472,10 +507,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				65E9267525C2CAD2006E9282 /* WordTableViewCell.swift in Sources */,
+				65E926F625C3301C006E9282 /* ItemDescriptionTableViewCell.swift in Sources */,
 				65E924BB25BF483A006E9282 /* Network.swift in Sources */,
 				65E924D625BF4D8B006E9282 /* Word.swift in Sources */,
 				65E9267B25C2CE03006E9282 /* UIKitExtensions.swift in Sources */,
+				65E926EC25C32798006E9282 /* CellModel.swift in Sources */,
 				65E926AC25C312DB006E9282 /* AppFlowCoordinator.swift in Sources */,
+				65E9271625C365A7006E9282 /* TopCellData.swift in Sources */,
 				65E926B625C314A6006E9282 /* Wireframe.swift in Sources */,
 				65E9246825BF32FC006E9282 /* AppDelegate.swift in Sources */,
 				65E9259825C06AD1006E9282 /* Services.swift in Sources */,
@@ -502,11 +540,17 @@
 				65E9269725C2DD6E006E9282 /* Localizable.swift in Sources */,
 				65E9268525C2CF7E006E9282 /* FoundationExtensions.swift in Sources */,
 				65E926A225C312B7006E9282 /* BaseCoordinator.swift in Sources */,
+				65E9270E25C35732006E9282 /* AudioDataTableViewCell.swift in Sources */,
 				65E926BA25C31538006E9282 /* Presentable.swift in Sources */,
+				65E926FA25C3303F006E9282 /* ItemTopTableViewCell.swift in Sources */,
 				65E9268D25C2DA75006E9282 /* WordDetailViewController.swift in Sources */,
+				65E9270225C3471E006E9282 /* R.swift in Sources */,
+				65E9271225C36590006E9282 /* AudioCellData.swift in Sources */,
+				65E926FE25C33057006E9282 /* WordCellData.swift in Sources */,
 				65E924EE25BF5B02006E9282 /* Endpoint.swift in Sources */,
 				65E9260325C1D259006E9282 /* Task.swift in Sources */,
 				65E924C125BF4880006E9282 /* SkyError.swift in Sources */,
+				65E926F225C3289B006E9282 /* Identifiable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

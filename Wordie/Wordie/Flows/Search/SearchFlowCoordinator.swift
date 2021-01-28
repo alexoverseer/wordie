@@ -19,8 +19,7 @@ class SearchFlowCoordinator: BaseCoordinator, SearchFlowCoordinatorInput {
     }
 
     override func start() {
-        let viewController = SearchScreenBuilder.build()
-        viewController.coordinator = self
+        let viewController = SearchScreenBuilder.build(coordinator: self)
         wireframe.setRootModule(viewController)
     }
 

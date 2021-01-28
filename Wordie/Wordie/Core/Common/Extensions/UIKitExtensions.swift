@@ -41,3 +41,12 @@ extension UITableView {
         self.separatorStyle = .singleLine
     }
 }
+
+extension UIView {
+    func pinToEdges(of view: UIView, constant: CGFloat = 0) {
+        topAnchor.constraint(equalTo: view.topAnchor, constant: constant).isActive = true
+        leftAnchor.constraint(equalTo: view.leftAnchor, constant: constant).isActive = true
+        rightAnchor.constraint(equalTo: view.rightAnchor, constant: -constant).isActive = true
+        bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -constant).isActive = true
+    }
+}

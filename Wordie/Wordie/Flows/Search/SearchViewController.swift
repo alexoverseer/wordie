@@ -10,15 +10,13 @@ import UIKit
 final class SearchViewController: UIViewController {
 
     let searchController = UISearchController(searchResultsController: nil)
-    var results: [WordItemViewModel] = []
-    var interactor: SearchFlowInteractorInput!
+    var interactor: SearchFlowInteractorType!
     private var failureMessage: String?
-    var coordinator: SearchFlowCoordinatorInput?
 
     lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.register(WordTableViewCell.self, forCellReuseIdentifier: String(describing: WordTableViewCell.self))
+        tableView.register(WordTableViewCell.self)
         tableView.dataSource = self
         tableView.rowHeight = UITableView.automaticDimension
         tableView.delegate = self
@@ -33,10 +31,7 @@ final class SearchViewController: UIViewController {
 
     private func setupTableView() {
         view.addSubview(tableView)
-        tableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        tableView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        tableView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        tableView.pinToEdges(of: view)
     }
 
     private func setupSearchContainer() {
@@ -56,40 +51,36 @@ extension SearchViewController: UISearchResultsUpdating {
 
 extension SearchViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        results.isEmpty ? tableView.setEmptyView(title: Localizable.Search.emptyViewTitle, message: failureMessage ?? Localizable.Search.emptyViewSubtitle) : tableView.restore()
-        return results.count
+        interactor.itemsCount == 0 ? tableView.setEmptyView(title: Localizable.Search.emptyViewTitle, message: failureMessage ?? Localizable.Search.emptyViewSubtitle) : tableView.restore()
+        return interactor.itemsCount
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: WordTableViewCell.self), for: indexPath)
-        let element = results[indexPath.row]
-        cell.textLabel?.text = element.title
-        cell.detailTextLabel?.text = element.subtitle
+        guard let cellModel = interactor.cellModel(at: indexPath) else { return UITableViewCell() }
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellModel.identifier, for: indexPath)
+        (cell as? PopulatableCell)?.populate(with: cellModel.data)
         return cell
     }
 }
 
 extension SearchViewController: SearchFlowInteractorOutput {
-    func didFinishLoading(items: [WordItemViewModel]) {
-        results = items
+    func didFinishLoadingItems() {
         failureMessage = nil
-        UI { [weak self] in self?.tableView.reloadData() }
+        reloadData()
     }
 
     func didFail(with error: SkyError) {
         failureMessage = error.localizedDescription
-        reloadData(with: [])
+        reloadData()
     }
 
-    private func reloadData(with items: [WordItemViewModel]) {
-        results = items
+    private func reloadData() {
         UI { [weak self] in self?.tableView.reloadData() }
     }
 }
 
 extension SearchViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let item = results[indexPath.row]
-        coordinator?.didSelect(item.item)
+        interactor.didSelectItem(at: indexPath)
     }
 }

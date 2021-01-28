@@ -9,6 +9,7 @@ import Foundation
 
 protocol LookupServiceType {
     func lookup(query: LookupQuery, completion: @escaping (Result<[Word], SkyError>) -> Void)
+    func lookupMeanings(query: LookupQuery, completion: @escaping (Result<[Meanings], SkyError>) -> Void)
 }
 
 final class LookupService: LookupServiceType {
