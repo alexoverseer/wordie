@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  Wordie
+
+  Created by Ilia Gutu on 1/28/21.
+  
+*/
+
+"search.empty.title" = "There is nothing there";
+"search.empty.subtitle" = "Please start typing or change your query.";
+"search.bar.placeholder" = "Search new words";

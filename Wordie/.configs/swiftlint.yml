@@ -1,0 +1,25 @@
+---
+disabled_rules:
+- type_body_length
+- file_length
+- function_body_length
+- nesting
+opt_in_rules:
+- empty_count
+force_cast: warning
+force_try:
+  severity: warning
+type_name:
+  min_length: 2
+  max_length:
+    warning: 40
+    error: 50
+  excluded: iPhone
+identifier_name:
+  min_length: 2
+  excluded:
+  - id
+  - URL
+  - x
+  - y
+  - i
